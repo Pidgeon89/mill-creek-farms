@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="Mill Creek Farms">
+  <rect width="32" height="32" rx="7" fill="#2C1810"/>
+  <polygon fill="#C9892E" points="16,3.5 26.5,9.5 26.5,22.5 16,28.5 5.5,22.5 5.5,9.5"/>
+  <ellipse cx="16" cy="16" rx="7.4" ry="4.7" fill="#6B3E26" transform="rotate(-32 16 16)"/>
+  <ellipse cx="16" cy="16" rx="5.6" ry="1" fill="#F6F0E4" transform="rotate(-32 16 16)"/>
+</svg>

@@ -1,0 +1,16 @@
+node_modules
+.output
+.nitro
+.vercel
+.vinxi
+dist
+.tanstack
+.env
+.env.*
+*.log
+screenshots
+artifacts
+attachments
+src/copy-archive
+.grok/preview.log
+.grok/status
