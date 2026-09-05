@@ -34,10 +34,10 @@ function Honey() {
         </div>
 
         <p className="mt-16 text-xs font-medium uppercase tracking-[0.18em] text-muted">From the kitchen</p>
-        <h2 className="mt-2 font-display text-3xl">Five infusions. Two dollars more.</h2>
+        <h2 className="mt-2 font-display text-3xl">Five infusions. Twelve-ounce jars.</h2>
         <p className="mt-3 max-w-2xl text-base leading-relaxed text-muted">
           Same raw wildflower honey, finished with lemon, lavender, jalapeño, ginger, or garlic.
-          The extra two dollars is the fruit, flower, or fire — not a different hive.
+          The fruit, flower, or fire is from the kitchen — not a different hive. Twelve ounces. Seventeen dollars.
         </p>
         <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {infused.map((p) => (

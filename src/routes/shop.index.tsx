@@ -6,7 +6,7 @@ export const Route = createFileRoute("/shop/")({ component: Shop });
 
 const sections = [
   { key: "pecans" as const, title: "Pecans", blurb: "Raw, roasted, candied — from our own trees." },
-  { key: "honey" as const, title: "Honey", blurb: "The plain wildflower jar, then five kitchen infusions at two dollars more." },
+  { key: "honey" as const, title: "Honey", blurb: "The plain wildflower pound, then five kitchen infusions in 12-ounce jars." },
   { key: "gifts" as const, title: "Crates", blurb: "Packed for a porch, not a warehouse." },
 ];
 
