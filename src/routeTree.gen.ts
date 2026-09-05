@@ -19,6 +19,7 @@ import { Route as OurStoryRouteImport } from './routes/our-story'
 import { Route as ShopRouteImport } from './routes/shop'
 import { Route as TrueCostRouteImport } from './routes/true-cost'
 import { Route as VeteransRouteImport } from './routes/veterans'
+import { Route as ShopIndexRouteImport } from './routes/shop.index'
 import { Route as ShopSlugRouteImport } from './routes/shop.$slug'
 import { Route as ApiStripeWebhookRouteImport } from './routes/api/stripe.webhook'
 
@@ -72,6 +73,11 @@ const VeteransRoute = VeteransRouteImport.update({
   path: '/veterans',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ShopIndexRoute = ShopIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => ShopRoute,
+} as any)
 const ShopSlugRoute = ShopSlugRouteImport.update({
   id: '/$slug',
   path: '/$slug',
@@ -95,6 +101,7 @@ export interface FileRoutesByFullPath {
   '/true-cost': typeof TrueCostRoute
   '/veterans': typeof VeteransRoute
   '/shop/$slug': typeof ShopSlugRoute
+  '/shop/': typeof ShopIndexRoute
   '/api/stripe/webhook': typeof ApiStripeWebhookRoute
 }
 export interface FileRoutesByTo {
@@ -105,10 +112,10 @@ export interface FileRoutesByTo {
   '/georgia-pecans': typeof GeorgiaPecansRoute
   '/honey': typeof HoneyRoute
   '/our-story': typeof OurStoryRoute
-  '/shop': typeof ShopRouteWithChildren
   '/true-cost': typeof TrueCostRoute
   '/veterans': typeof VeteransRoute
   '/shop/$slug': typeof ShopSlugRoute
+  '/shop': typeof ShopIndexRoute
   '/api/stripe/webhook': typeof ApiStripeWebhookRoute
 }
 export interface FileRoutesById {
@@ -124,6 +131,7 @@ export interface FileRoutesById {
   '/true-cost': typeof TrueCostRoute
   '/veterans': typeof VeteransRoute
   '/shop/$slug': typeof ShopSlugRoute
+  '/shop/': typeof ShopIndexRoute
   '/api/stripe/webhook': typeof ApiStripeWebhookRoute
 }
 export interface FileRouteTypes {
@@ -140,6 +148,7 @@ export interface FileRouteTypes {
     | '/true-cost'
     | '/veterans'
     | '/shop/$slug'
+    | '/shop/'
     | '/api/stripe/webhook'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -150,10 +159,10 @@ export interface FileRouteTypes {
     | '/georgia-pecans'
     | '/honey'
     | '/our-story'
-    | '/shop'
     | '/true-cost'
     | '/veterans'
     | '/shop/$slug'
+    | '/shop'
     | '/api/stripe/webhook'
   id:
     | '__root__'
@@ -168,6 +177,7 @@ export interface FileRouteTypes {
     | '/true-cost'
     | '/veterans'
     | '/shop/$slug'
+    | '/shop/'
     | '/api/stripe/webhook'
   fileRoutesById: FileRoutesById
 }
@@ -257,6 +267,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof VeteransRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/shop/': {
+      id: '/shop/'
+      path: '/'
+      fullPath: '/shop/'
+      preLoaderRoute: typeof ShopIndexRouteImport
+      parentRoute: typeof ShopRoute
+    }
     '/shop/$slug': {
       id: '/shop/$slug'
       path: '/$slug'
@@ -276,10 +293,12 @@ declare module '@tanstack/react-router' {
 
 interface ShopRouteChildren {
   ShopSlugRoute: typeof ShopSlugRoute
+  ShopIndexRoute: typeof ShopIndexRoute
 }
 
 const ShopRouteChildren: ShopRouteChildren = {
   ShopSlugRoute: ShopSlugRoute,
+  ShopIndexRoute: ShopIndexRoute,
 }
 
 const ShopRouteWithChildren = ShopRoute._addFileChildren(ShopRouteChildren)

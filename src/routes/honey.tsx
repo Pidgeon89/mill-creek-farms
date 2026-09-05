@@ -7,6 +7,8 @@ export const Route = createFileRoute("/honey")({ component: Honey });
 
 function Honey() {
   const jars = byCategory("honey");
+  const plain = jars.filter((p) => p.slug.startsWith("wildflower"));
+  const infused = jars.filter((p) => !p.slug.startsWith("wildflower"));
   return (
     <main>
       <section className="relative min-h-[46vh] overflow-hidden">
@@ -26,7 +28,19 @@ function Honey() {
           If it clouds in January, that is honey doing what honey does.
         </p>
         <div className="mt-10 grid gap-5 sm:grid-cols-2">
-          {jars.map((p) => (
+          {plain.map((p) => (
+            <ProductCard key={p.slug} product={p} />
+          ))}
+        </div>
+
+        <p className="mt-16 text-xs font-medium uppercase tracking-[0.18em] text-muted">From the kitchen</p>
+        <h2 className="mt-2 font-display text-3xl">Five infusions. Two dollars more.</h2>
+        <p className="mt-3 max-w-2xl text-base leading-relaxed text-muted">
+          Same raw wildflower honey, finished with lemon, lavender, jalapeño, ginger, or garlic.
+          The extra two dollars is the fruit, flower, or fire — not a different hive.
+        </p>
+        <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          {infused.map((p) => (
             <ProductCard key={p.slug} product={p} />
           ))}
         </div>
