@@ -1,11 +1,19 @@
 import { Link } from "@tanstack/react-router";
+import { assetPath } from "@/lib/utils";
 
 export function Footer() {
   return (
     <footer className="mt-auto border-t border-border bg-bark text-paper">
       <div className="mx-auto grid max-w-6xl gap-10 px-4 py-14 sm:px-6 md:grid-cols-4">
         <div className="md:col-span-2">
-          <p className="font-display text-2xl">Mill Creek Farms</p>
+          <div className="flex items-center gap-3">
+            <img
+              src={assetPath("/images/logo.png")}
+              alt=""
+              className="size-14 rounded-full object-cover"
+            />
+            <p className="font-display text-2xl">Mill Creek Farms</p>
+          </div>
           <p className="mt-3 max-w-md text-sm leading-relaxed text-cream/80">
             Georgia pecans and raw wildflower honey from a family orchard in
             Statesboro. Grown here, packed here, sent like we still live here.

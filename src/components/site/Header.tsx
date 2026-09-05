@@ -2,6 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { Menu, ShoppingBag, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import { cartCount, useCart } from "@/lib/cart";
+import { assetPath } from "@/lib/utils";
 
 const links = [
   { to: "/georgia-pecans", label: "Georgia pecans" },
@@ -22,9 +23,11 @@ export function Header() {
     <header className="sticky top-0 z-40 border-b border-border bg-paper/92 backdrop-blur-md">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:h-[4.5rem] sm:px-6">
         <Link to="/" className="flex items-center gap-3" onClick={() => setOpen(false)}>
-          <span className="grid size-9 place-items-center rounded-md bg-bark text-paper">
-            <PecanMark />
-          </span>
+          <img
+            src={assetPath("/images/logo.png")}
+            alt="Mill Creek Farms"
+            className="size-11 rounded-full object-cover shadow-[0_0_0_1px_rgba(44,24,16,0.12)] sm:size-12"
+          />
           <span className="leading-tight">
             <span className="block font-display text-[15px] font-semibold tracking-tight text-ink">
               Mill Creek Farms
@@ -87,18 +90,5 @@ export function Header() {
         </nav>
       ) : null}
     </header>
-  );
-}
-
-function PecanMark() {
-  return (
-    <svg viewBox="0 0 24 24" className="size-5" fill="none" aria-hidden>
-      <path
-        d="M12 3c2.4 1.2 6 4.2 6 8.2 0 4.4-2.7 8.4-6 10.3C8.7 19.6 6 15.6 6 11.2 6 7.2 9.6 4.2 12 3Z"
-        fill="currentColor"
-        opacity="0.9"
-      />
-      <path d="M12 5.2v15" stroke="#FBF7F0" strokeWidth="0.8" opacity="0.55" />
-    </svg>
   );
 }
