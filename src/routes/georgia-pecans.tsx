@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ProductCard } from "@/components/product/ProductCard";
 import { Button } from "@/components/ui/button";
 import { byCategory } from "@/data/products";
+import { assetPath } from "@/lib/utils";
 
 export const Route = createFileRoute("/georgia-pecans")({ component: Pecans });
 
@@ -10,7 +11,7 @@ function Pecans() {
   return (
     <main>
       <section className="relative min-h-[48vh] overflow-hidden">
-        <img src="/images/grove-harvest.jpg" alt="Georgia pecan grove at harvest" className="absolute inset-0 h-full w-full object-cover" />
+        <img src={assetPath("/images/grove-harvest.jpg")} alt="Georgia pecan grove at harvest" className="absolute inset-0 h-full w-full object-cover" />
         <div className="absolute inset-0 bg-ink/50" />
         <div className="relative mx-auto flex min-h-[48vh] max-w-6xl flex-col justify-end px-4 pb-12 sm:px-6">
           <p className="text-xs font-medium uppercase tracking-[0.22em] text-honey">millcreekfarmga / georgia-pecans</p>
@@ -41,7 +42,7 @@ function Pecans() {
             </Button>
           </div>
         </div>
-        <img src="/images/farmer-hands.jpg" alt="Farmer holding freshly cracked pecan halves" className="rounded-xl object-cover shadow-[var(--shadow-border)]" />
+        <img src={assetPath("/images/farmer-hands.jpg")} alt="Farmer holding freshly cracked pecan halves" className="rounded-xl object-cover shadow-[var(--shadow-border)]" />
       </section>
 
       <section className="mx-auto max-w-6xl px-4 pb-16 sm:px-6">

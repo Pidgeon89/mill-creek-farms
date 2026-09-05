@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
+import { assetPath } from "@/lib/utils";
 
 export const Route = createFileRoute("/veterans")({ component: Veterans });
 
@@ -8,7 +9,7 @@ function Veterans() {
     <main>
       <section className="relative min-h-[50vh] overflow-hidden">
         <img
-          src="/images/veteran-packing.jpg"
+          src={assetPath("/images/veteran-packing.jpg")}
           alt="Packing pecan bags at Mill Creek Farms"
           className="absolute inset-0 h-full w-full object-cover"
         />
@@ -45,7 +46,7 @@ function Veterans() {
           </div>
         </div>
         <img
-          src="/images/veteran-honey.jpg"
+          src={assetPath("/images/veteran-honey.jpg")}
           alt="Labeling jars of wildflower honey at the farm"
           className="rounded-xl object-cover shadow-[var(--shadow-border)]"
         />

@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import type { Product } from "@/data/products";
-import { money } from "@/lib/utils";
+import { money, assetPath } from "@/lib/utils";
 import { AddToCart } from "./AddToCart";
 
 export function ProductCard({ product }: { product: Product }) {
@@ -8,7 +8,7 @@ export function ProductCard({ product }: { product: Product }) {
     <article className="flex flex-col overflow-hidden rounded-xl bg-cream/40 shadow-[var(--shadow-border)]">
       <Link to="/shop/$slug" params={{ slug: product.slug }} className="block">
         <img
-          src={product.image}
+          src={assetPath(product.image)}
           alt={product.name}
           className="aspect-photo w-full object-cover"
         />

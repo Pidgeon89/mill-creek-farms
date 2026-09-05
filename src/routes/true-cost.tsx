@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
+import { assetPath } from "@/lib/utils";
 
 export const Route = createFileRoute("/true-cost")({ component: TrueCost });
 
@@ -8,7 +9,7 @@ function TrueCost() {
     <main>
       <section className="relative min-h-[46vh] overflow-hidden">
         <img
-          src="/images/orchard-hero.jpg"
+          src={assetPath("/images/orchard-hero.jpg")}
           alt="Pecan orchard at Mill Creek Farms"
           className="absolute inset-0 h-full w-full object-cover"
         />

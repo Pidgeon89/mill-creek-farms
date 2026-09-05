@@ -12,5 +12,5 @@ screenshots
 artifacts
 attachments
 src/copy-archive
-.grok/preview.log
-.grok/status
+.agents
+skills-lock.json

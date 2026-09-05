@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ProductCard } from "@/components/product/ProductCard";
 import { byCategory } from "@/data/products";
+import { assetPath } from "@/lib/utils";
 
 export const Route = createFileRoute("/honey")({ component: Honey });
 
@@ -9,7 +10,7 @@ function Honey() {
   return (
     <main>
       <section className="relative min-h-[46vh] overflow-hidden">
-        <img src="/images/honey.jpg" alt="Raw wildflower honey from Mill Creek Farms" className="absolute inset-0 h-full w-full object-cover" />
+        <img src={assetPath("/images/honey.jpg")} alt="Raw wildflower honey from Mill Creek Farms" className="absolute inset-0 h-full w-full object-cover" />
         <div className="absolute inset-0 bg-ink/45" />
         <div className="relative mx-auto flex min-h-[46vh] max-w-6xl flex-col justify-end px-4 pb-12 sm:px-6">
           <p className="text-xs font-medium uppercase tracking-[0.22em] text-honey">millcreekfarmga / honey</p>

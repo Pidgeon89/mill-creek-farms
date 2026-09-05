@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
+import { assetPath } from "@/lib/utils";
 
 export const Route = createFileRoute("/our-story")({ component: Story });
 
@@ -7,7 +8,7 @@ function Story() {
   return (
     <main>
       <section className="relative min-h-[50vh] overflow-hidden">
-        <img src="/images/farm-porch.jpg" alt="Mill Creek Farms porch with pecans and honey" className="absolute inset-0 h-full w-full object-cover" />
+        <img src={assetPath("/images/farm-porch.jpg")} alt="Mill Creek Farms porch with pecans and honey" className="absolute inset-0 h-full w-full object-cover" />
         <div className="absolute inset-0 bg-ink/50" />
         <div className="relative mx-auto flex min-h-[50vh] max-w-6xl flex-col justify-end px-4 pb-12 sm:px-6">
           <p className="text-xs font-medium uppercase tracking-[0.22em] text-honey">millcreekfarmga / our-story</p>

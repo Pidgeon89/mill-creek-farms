@@ -11,3 +11,10 @@ export function money(n: number) {
     currency: "USD",
   }).format(n);
 }
+
+/** Prefix public files so the live millcreekfarmga path still finds photos. */
+export function assetPath(path: string) {
+  const base = (import.meta.env.BASE_URL || "/").replace(/\/$/, "");
+  if (!path.startsWith("/") || !base) return path;
+  return `${base}${path}`;
+}

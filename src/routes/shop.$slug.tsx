@@ -1,7 +1,7 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { AddToCart } from "@/components/product/AddToCart";
 import { getProduct, products } from "@/data/products";
-import { money } from "@/lib/utils";
+import { money, assetPath } from "@/lib/utils";
 
 export const Route = createFileRoute("/shop/$slug")({
   component: ProductPage,
@@ -23,7 +23,7 @@ function ProductPage() {
       </p>
       <div className="mt-6 grid gap-10 lg:grid-cols-2">
         <img
-          src={product.image}
+          src={assetPath(product.image)}
           alt={product.name}
           className="w-full rounded-xl object-cover shadow-[var(--shadow-border)]"
         />
@@ -56,7 +56,7 @@ function ProductPage() {
                 params={{ slug: p.slug }}
                 className="overflow-hidden rounded-xl bg-cream/40 shadow-[var(--shadow-border)]"
               >
-                <img src={p.image} alt="" className="aspect-photo w-full object-cover" />
+                <img src={assetPath(p.image)} alt="" className="aspect-photo w-full object-cover" />
                 <div className="p-3">
                   <p className="font-display">{p.name}</p>
                   <p className="text-sm tabular-nums text-muted">{money(p.retail)}</p>

@@ -3,6 +3,7 @@ import { ArrowRight, BookOpen, Gift, Trees } from "lucide-react";
 import { ProductCard } from "@/components/product/ProductCard";
 import { Button } from "@/components/ui/button";
 import { products } from "@/data/products";
+import { assetPath } from "@/lib/utils";
 
 export const Route = createFileRoute("/")({ component: Home });
 
@@ -13,7 +14,7 @@ function Home() {
     <main>
       <section className="relative min-h-[72vh] overflow-hidden">
         <img
-          src="/images/orchard-hero.jpg"
+          src={assetPath("/images/orchard-hero.jpg")}
           alt="Pecan orchard at Mill Creek Farms, Statesboro, Georgia"
           className="absolute inset-0 h-full w-full object-cover"
         />
@@ -116,7 +117,7 @@ function Home() {
       </section>
 
       <section className="mx-auto my-16 grid max-w-6xl overflow-hidden rounded-xl bg-bark text-paper shadow-[var(--shadow-border)] md:grid-cols-2">
-        <img src="/images/farm-porch.jpg" alt="Mill Creek Farms porch with pecans and honey" className="h-full min-h-64 w-full object-cover" />
+        <img src={assetPath("/images/farm-porch.jpg")} alt="Mill Creek Farms porch with pecans and honey" className="h-full min-h-64 w-full object-cover" />
         <div className="flex flex-col justify-center p-8 sm:p-12">
           <p className="text-xs font-medium uppercase tracking-[0.18em] text-honey">Come by the farm</p>
           <h2 className="mt-3 font-display text-3xl">The grove is the experience.</h2>
